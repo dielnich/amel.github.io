@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      /* mengganti font-family dan font-size */
+      font-family: 'Impact', sans-serif;
+      font-size: 48px;
+      color: white;
+      background-color: black;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .text {
+      display: none;
+    }
+
+    .text.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="text active">hi amell atau haruska blg mahasiswa IPB</div>
+    <div class="text">lagi ga semangat yah kerja maketnya?</div>
+    <div class="text">capek? atau apa?</div>
+    <div class="text">yaa begitu ji memang cak, mungkin lagi fasenya begitu dan its okay</div>
+    <div class="text">istirahat mko dlu nd sih? krn ada orang yang bilang "Sesuatu yg trlalu dipaksa sesungguhnya tdk maksimal ji jg"</div>
+    <div class="text">bakal balik ji itu semangat, mungkin lagi keluar ki malming dlu</div>
+    <div class="text">sekian, ganbatte Resky Amalia Putri S.Tr !! (cocok ji kah itu gelarnya?)</div>
+  </div>
+  <script>
+    // mengambil semua elemen dengan class text
+    let texts = document.querySelectorAll(".text");
+    // mengatur index awal
+    let index = 0;
+    // mengatur interval dalam milidetik
+    let interval = 4500;
+    // membuat fungsi untuk mengganti text yang aktif
+    function changeText() {
+      // menyembunyikan text yang aktif sekarang
+      texts[index].classList.remove("active");
+      // mengubah index ke text selanjutnya
+      index = (index + 1) % texts.length;
+      // menampilkan text yang baru
+      texts[index].classList.add("active");
+    }
+    // menjalankan fungsi changeText setiap interval
+    setInterval(changeText, interval);
+  </script>
+</body>
+</html>
